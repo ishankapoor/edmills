@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+body{
+    background-color:aliceblue;
+}
+@media screen and (max-width: 600px) {
+#introcontainer {
+background-color: aqua;
+box-shadow: 0 0 10px 2px rgba(9,9,9,0.1);
+text-align:center;
+max-height:90%;
+max-width:85%;
+margin-left:8%;
+padding : 4px;
+}
+#introcontainer .text{
+position: absolute;
+/*    margin: 0 auto;*/
+left: 8%;
+right: 100px;
+text-align: left;
+top: 60%; /*Adjust this value to move the positioned div up and down */
+background: white;
+font-family: Arial,sans-serif;
+color: black;
+box-shadow: 10px 5px 0px black;
+border-color: blue;
+padding-left: 20px;
+padding-right: 20px;
+border-width: 4px;
+border-style: solid;
+font-size:small;
+}
+}
+
+@media screen and (min-width: 601px) {
+#introcontainer {
+padding: 10px;
+background-color: aqua;
+margin-left: 30%;
+margin-right:30%;
+box-shadow: 0 0 8px 2px rgba(9,9,9,0.1);
+text-align:center;	
+/*position: absolute;*/
+max-height: 85%;
+max-width: 35%;
+}
+#introcontainer .text{
+position: absolute;
+/*    margin: 0 auto;*/
+left:25%;
+right: 40%;
+text-align: left;
+top: 5%; /*Adjust this value to move the positioned div up and down */
+background: white;
+font-family: Arial,sans-serif;
+color: black;
+box-shadow: 10px 5px 0px black;
+border-color: blue;
+padding-left: 20px;
+padding-right: 20px;
+border-width: 4px;
+border-style: solid;
+font-size:0.8vw;
+}
+}
+img
+{
+height: 100%;
+width: 100%;
+margin: auto;
+}
+</style>
+</head>
+<body>
+<div id="introcontainer">
+<img src="ed.jpg"/>
+<div class="text">
+<h1><span id = "speak" class="speak">What's wrong? You loook like someone parked a Buick on your foot.<span></h1>
+</div>
+<script>
+var speech =["What's wrong? You look like someone parked a Buick on your foot!",
+             "It's like elective oral surgery without anesthetic!",
+			 "The snappy dresser with boy-ish good looks!",
+			 "No, I want to be in office and present, in case there is any executive eye-rolling!",
+			 "Your tool is face down in its oatmeal dude!",
+			 "Because it's religion, you might as well park your car on my foot!"];
+var randomNumber = Math.floor(Math.random()*speech.length);
+document.getElementById("speak").innerHTML = speech[randomNumber];
+</script>
+</body>
+</html>
