@@ -85,14 +85,25 @@ margin: auto;
 </div>
 <script>
 var speech =["What's wrong? You look like someone parked a Buick on your foot!",
-             "It's like elective oral surgery without anesthetic!",
-	     "The snappy dresser with boy-ish good looks!",
-	     "No, I want to be in office and present, in case there is any executive eye-rolling!",
-	     "Your tool is face down in its oatmeal dude!",
-	     "Department of Homeland Stupidity!",
-	     "I am as old as dirt!",
-	     "Because it's religion, you might as well park your car on my foot!"];
-var randomNumber = Math.floor(Math.random()*speech.length);
+         "It's like elective oral surgery without anesthetic!",
+         "The snappy dresser with boy-ish good looks!",
+         "No, I want to be in office and present, in case there is any executive eye-rolling!",
+         "Your tool is face down in its oatmeal dude!",
+         "Department of Homeland Stupidity!",
+         "I am as old as dirt!",
+         "Because it's religion, you might as well park your car on my foot!"];
+
+let data = 0;
+        if (window.localStorage.getItem("isNewSession")) {
+             data = window.localStorage.getItem("increment");
+             data = parseInt(data) + 1;
+             window.localStorage.setItem('increment', data);
+        } else {
+            data = 0;
+            window.localStorage.setItem('increment', data);
+            window.localStorage.setItem('isNewSession', 'true');
+        }
+var randomNumber = data % speech.length;
 document.getElementById("speak").innerHTML = speech[randomNumber];
 </script>
 </body>
